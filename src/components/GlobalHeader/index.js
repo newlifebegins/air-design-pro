@@ -66,6 +66,14 @@ export default class GlobalHeader extends PureComponent {
         <Menu.Item key="logout"><Icon type="logout" />退出登录</Menu.Item>
       </Menu>
     );
+    const skin = (
+      <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
+        <Menu.Item><Icon type="user" />皮肤1</Menu.Item>
+        <Menu.Item><Icon type="user" />皮肤2</Menu.Item>
+        <Menu.Item><Icon type="user" />皮肤3</Menu.Item>
+        <Menu.Item><Icon type="user" />皮肤4</Menu.Item>
+      </Menu>
+    );
     const noticeData = this.getNoticeData();
     return (
       <Header className={styles.header}>
@@ -131,6 +139,14 @@ export default class GlobalHeader extends PureComponent {
               <span className={`${styles.action} ${styles.account}`}>
                 <Avatar size="small" className={styles.avatar} src={currentUser.avatar} />
                 <span className={styles.name}>{currentUser.name}</span>
+              </span>
+            </Dropdown>
+          ) : <Spin size="small" style={{ marginLeft: 8 }} />}
+          {currentUser.skin ? (
+            <Dropdown overlay={skin}>
+              <span className={`${styles.action} ${styles.account}`}>
+                <Avatar size="small" className={styles.avatar} src={currentUser.skinimg} />
+                <span className={styles.name}>{currentUser.skin}</span>
               </span>
             </Dropdown>
           ) : <Spin size="small" style={{ marginLeft: 8 }} />}

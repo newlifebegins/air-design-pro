@@ -41,51 +41,50 @@ class Step2 extends React.PureComponent {
         <Alert
           closable
           showIcon
-          message="确认转账后，资金将直接打入对方账户，无法退回。"
+          message="确认后，系统将直接指派给网格员。"
           style={{ marginBottom: 24 }}
         />
         <Form.Item
           {...formItemLayout}
           className={styles.stepFormText}
-          label="付款账户"
+          label="事件名称"
         >
           {data.payAccount}
         </Form.Item>
         <Form.Item
           {...formItemLayout}
           className={styles.stepFormText}
-          label="收款账户"
+          label="事件描述"
         >
           {data.receiverAccount}
         </Form.Item>
         <Form.Item
           {...formItemLayout}
           className={styles.stepFormText}
-          label="收款人姓名"
+          label="网格员"
         >
           {data.receiverName}
         </Form.Item>
         <Form.Item
           {...formItemLayout}
           className={styles.stepFormText}
-          label="转账金额"
+          label="处理时间"
         >
           <span className={styles.money}>{data.amount}</span>
-          <span className={styles.uppercase}>（{digitUppercase(data.amount)}）</span>
         </Form.Item>
         <Divider style={{ margin: '24px 0' }} />
         <Form.Item
           {...formItemLayout}
-          label="支付密码"
+          label="备注"
           required={false}
         >
           {getFieldDecorator('password', {
             initialValue: '123456',
             rules: [{
-              required: true, message: '需要支付密码才能进行支付',
+              required: true, message: '需要备注才能提交',
             }],
           })(
-            <Input type="password" autoComplete="off" style={{ width: '80%' }} />
+            <Input type="text" autoComplete="off" style={{ width: '80%' }} />
           )}
         </Form.Item>
         <Form.Item

@@ -27,8 +27,8 @@ export default class StepForm extends PureComponent {
         <Card bordered={false}>
           <div>
             <Steps current={this.getCurrentStep()} className={styles.steps}>
-              <Step title="填写转账信息" />
-              <Step title="确认转账信息" />
+              <Step title="发起任务" />
+              <Step title="领导审批" />
               <Step title="完成" />
             </Steps>
             <Switch>

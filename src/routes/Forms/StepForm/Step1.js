@@ -36,60 +36,59 @@ class Step1 extends React.PureComponent {
         <Form layout="horizontal" className={styles.stepForm} hideRequiredMark>
           <Form.Item
             {...formItemLayout}
-            label="付款账户"
+            label="事件名称"
           >
             {getFieldDecorator('payAccount', {
               initialValue: data.payAccount,
-              rules: [{ required: true, message: '请选择付款账户' }],
+              rules: [{ required: true, message: '请选择事件' }],
             })(
-              <Select placeholder="test@example.com">
-                <Option value="ant-design@alipay.com">ant-design@alipay.com</Option>
+              <Select placeholder="请选择事件">
+                <Option value="ant-design@alipay.com">污染源监测报表</Option>
               </Select>
             )}
           </Form.Item>
           <Form.Item
             {...formItemLayout}
-            label="收款账户"
+            label="事件描述"
           >
             <Input.Group compact>
               <Select defaultValue="alipay" style={{ width: 100 }}>
-                <Option value="alipay">支付宝</Option>
-                <Option value="bank">银行账户</Option>
+                <Option value="alipay">一般事件</Option>
+                <Option value="bank">紧急事件</Option>
               </Select>
               {getFieldDecorator('receiverAccount', {
                 initialValue: data.receiverAccount,
                 rules: [
-                  { required: true, message: '请输入收款人账户' },
-                  { type: 'email', message: '账户名应为邮箱格式' },
+                  { required: true, message: '请选择事件类型' },
                 ],
               })(
-                <Input style={{ width: 'calc(100% - 100px)' }} placeholder="test@example.com" />
+                <Input style={{ width: 'calc(100% - 100px)' }} placeholder="小店区昌盛街" />
               )}
             </Input.Group>
           </Form.Item>
           <Form.Item
             {...formItemLayout}
-            label="收款人姓名"
+            label="指派人姓名"
           >
             {getFieldDecorator('receiverName', {
               initialValue: data.receiverName,
-              rules: [{ required: true, message: '请输入收款人姓名' }],
+              rules: [{ required: false, message: '请输入姓名' }],
             })(
-              <Input placeholder="请输入收款人姓名" />
+              <Input placeholder="请输入姓名" />
             )}
           </Form.Item>
           <Form.Item
             {...formItemLayout}
-            label="转账金额"
+            label="处理时间"
           >
             {getFieldDecorator('amount', {
               initialValue: data.amount,
               rules: [
-                { required: true, message: '请输入转账金额' },
-                { pattern: /^(\d+)((?:\.\d+)?)$/, message: '请输入合法金额数字' },
+                { required: true, message: '请输入时间' },
+                { pattern: '', message: '请输入合法时间' },
               ],
             })(
-              <Input prefix="￥" placeholder="请输入金额" />
+              <Input prefix="" placeholder="请输入时间" />
             )}
           </Form.Item>
           <Form.Item
@@ -107,9 +106,9 @@ class Step1 extends React.PureComponent {
         <Divider style={{ margin: '40px 0 24px' }} />
         <div className={styles.desc}>
           <h3>说明</h3>
-          <h4>转账到支付宝账户</h4>
+          <h4>指派给网格员说明</h4>
           <p>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。</p>
-          <h4>转账到银行卡</h4>
+          <h4>指派给网格员说明</h4>
           <p>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。</p>
         </div>
       </div>

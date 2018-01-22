@@ -7,10 +7,10 @@ export default {
 
   state: {
     step: {
-      payAccount: 'ant-design@alipay.com',
-      receiverAccount: 'test@example.com',
-      receiverName: 'Alex',
-      amount: '500',
+      payAccount: '请选择事件',
+      receiverAccount: '污染源报表',
+      receiverName: '刘泽斌',
+      amount: '2018-01-22',
     },
   },
 
